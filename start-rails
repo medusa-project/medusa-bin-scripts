@@ -1,0 +1,18 @@
+#!/bin/bash --login
+
+HOME=/services/medusa
+MEDUSA_HOME=$HOME/medusa
+FITS_SERVER_HOME=$HOME/ruby-fits-server
+export RAILS_ENV=production
+
+#Start local FITS server
+echo "Starting local FITS server"
+(cd $FITS_SERVER_HOME ; ./start.sh )
+
+# Start Passenger
+( cd $MEDUSA_HOME ; bundle exec passenger start -e production -d )
+
+#Start delayed_job
+( cd $MEDUSA_HOME ; bundle exec rake medusa:delayed_job:start )
+
+exit 0
