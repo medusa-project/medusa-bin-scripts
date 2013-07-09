@@ -1,0 +1,2 @@
+Clone this into /services/medusa/bin, then link the svc_hooks subdirectory to
+/services/medusa/bin/svc_hooks.

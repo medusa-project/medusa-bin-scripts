@@ -1,0 +1,13 @@
+#!/bin/bash
+###
+### backup_start - service hook for shutting down  services; called by /etc/???
+###
+
+# Load environment variables
+HOME=/services/medusa
+. $HOME/.bashrc
+
+DATESTAMP=`date "+%Y%m%d"`
+
+# Dump the DB to a file
+/usr/bin/pg_dump -E UNICODE fedora3 > $HOME/pgsql/backup/pg_fedora_dump_${DATESTAMP}.sql
