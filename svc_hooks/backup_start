@@ -8,6 +8,10 @@ HOME=/services/medusa
 . $HOME/.bashrc
 
 DATESTAMP=`date "+%Y%m%d"`
+BACKUP_DIR=$HOME/pgsql/backup
 
 # Dump the DB to a file
-/usr/bin/pg_dump -E UNICODE fedora3 > $HOME/pgsql/backup/pg_fedora_dump_${DATESTAMP}.sql
+/usr/bin/pg_dumpall > $BACKUP_DIR/pg_dump_${DATESTAMP}.sql
+# Remove old backups
+find $BACKUP_DIR -mtime +30 -delete
+
