@@ -10,10 +10,12 @@ HOME=/services/medusa
 # Start PostgreSQL
 $HOME/bin/start-postgres
 
+# Start RabbitMQ
+$HOME/bin/start-rabbitmq
+
 # Start Tomcat
 $HOME/bin/start-tomcat
 
 # Start Rais
 $HOME/bin/start-rails
 
-# Start whatever

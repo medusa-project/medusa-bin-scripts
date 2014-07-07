@@ -13,6 +13,9 @@ $HOME/bin/stop-rails
 # Stop Tomcat
 $HOME/bin/stop-tomcat
 
+#Stop RabbitMQ
+$HOME/bin/stop-rabbitmq
+
 # Stop PostgreSQL
 $HOME/bin/stop-postgres
 
