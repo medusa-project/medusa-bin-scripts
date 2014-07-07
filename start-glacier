@@ -1,0 +1,10 @@
+#!/bin/bash --login
+
+HOME=/services/medusa
+GLACIER_HOME=$HOME/medusa-glacier
+
+#Start Glacier server
+echo "Starting Glacier server"
+(cd $GLACIER_HOME ; ./medusa_glacier.sh start)
+
+exit 0

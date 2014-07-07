@@ -4,6 +4,7 @@ HOME=/services/medusa
 RABBITMQ_HOME=$HOME/rabbitmq
 
 #Start RabbitMQ server
+echo "Starting RabbitMQ"
 $RABBITMQ_HOME/sbin/rabbitmq-server -detached
 
 exit 0

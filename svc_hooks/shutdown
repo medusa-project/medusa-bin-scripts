@@ -13,6 +13,9 @@ $HOME/bin/stop-rails
 # Stop Tomcat
 $HOME/bin/stop-tomcat
 
+# Stop Glacier server
+$HOME/bin/stop-glacier
+
 # Stop RabbitMQ
 $HOME/bin/stop-rabbitmq
 
