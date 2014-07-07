@@ -1,0 +1,9 @@
+#!/bin/bash --login
+
+HOME=/services/medusa
+RABBITMQ_HOME=$HOME/rabbitmq
+
+#Stop RabbitMQ server
+$RABBITMQ_HOME/sbin/rabbitmqctl stop
+
+exit 0
