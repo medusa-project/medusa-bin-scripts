@@ -13,6 +13,9 @@ $HOME/bin/start-postgres
 # Start RabbitMQ
 $HOME/bin/start-rabbitmq
 
+# Start Glacier server
+$HOME/bin/start-glacier
+
 # Start Tomcat
 $HOME/bin/start-tomcat
 
