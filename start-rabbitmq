@@ -1,0 +1,10 @@
+#!/bin/bash --login
+
+HOME=/services/medusa
+RABBITMQ_HOME=$HOME/rabbitmq
+
+#Start rabbitmq
+echo "Starting RabbitMQ"
+$RABBITMQ_HOME/sbin/rabbitmq-server -detached
+
+exit 0
