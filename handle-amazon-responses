@@ -1,0 +1,10 @@
+#!/bin/bash --login
+
+HOME=/services/medusa
+MEDUSA_HOME=$HOME/medusa
+export RAILS_ENV=production
+
+#Handle any pending messages from Amazon
+( cd $MEDUSA_HOME ; bundle exec rake amazon:handle_responses )
+
+exit 0
