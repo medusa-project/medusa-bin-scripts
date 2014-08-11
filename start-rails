@@ -10,7 +10,7 @@ echo "Starting local FITS server"
 (cd $FITS_SERVER_HOME ; ./start.sh )
 
 # Start Passenger
-( cd $MEDUSA_HOME ; bundle exec passenger start -e production -d )
+( cd $MEDUSA_HOME ; bundle install ; bundle exec passenger start -e production -d )
 
 #Start delayed_job
 ( cd $MEDUSA_HOME ; bundle exec rake medusa:delayed_job:start )
