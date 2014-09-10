@@ -1,0 +1,8 @@
+#!/bin/bash --login
+
+HOME=/services/medusa
+BOOK_TRACKER_HOME=$HOME/book-tracker
+export RAILS_ENV=production
+
+# Stop Passenger
+( cd $BOOK_TRACKER_HOME ; bundle exec passenger stop )
