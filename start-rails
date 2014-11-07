@@ -9,8 +9,14 @@ export RAILS_ENV=production
 echo "Starting local FITS server"
 (cd $FITS_SERVER_HOME ; ./start.sh )
 
+
+ionice -c2 -n1 -p $$
 # Start Passenger
 ( cd $MEDUSA_HOME ; bundle install ; bundle exec passenger start -e production -d )
+
+#Make children have lower io and cpu priority 
+ionice -c2 -n5 -p $$       
+renice +4 -p $$
 
 #Start delayed_job
 ( cd $MEDUSA_HOME ; bundle exec rake medusa:delayed_job:start )
