@@ -1,0 +1,13 @@
+#!/bin/bash --login
+
+HOME=/services/medusa
+
+#Make children have lower io and cpu priority
+ionice -c2 -n5 -p $$
+renice +4 -p $$
+
+#Start Glacier server
+echo "Backing up operational directories to cnfs"
+( cd $HOME/bin ; ./backup-to-cnfs.rb )
+
+exit 0
