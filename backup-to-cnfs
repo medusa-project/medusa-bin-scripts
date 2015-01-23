@@ -1,14 +1,13 @@
 #!/bin/bash --login
 
 HOME=/services/medusa
-GLACIER_HOME=$HOME/medusa-glacier
 
 #Make children have lower io and cpu priority
 ionice -c2 -n5 -p $$
 renice +4 -p $$
 
 #Start Glacier server
-echo "Starting Glacier server"
-(cd $GLACIER_HOME ; ./medusa_glacier.sh start)
+echo "Backing up operational directories to cnfs"
+( cd $HOME/bin ; ./backup-to-cnfs.rb )
 
 exit 0
