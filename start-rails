@@ -9,6 +9,9 @@ export RAILS_ENV=production
 echo "Starting local FITS server"
 (cd $FITS_SERVER_HOME ; ./start.sh )
 
+#Clear Rails cache
+( cd $MEDUSA_HOME ; bundle exec rake medusa:rails_cache:clear )
+
 # Start Passenger
 ( cd $MEDUSA_HOME ; bundle install ; bundle exec passenger start -e production -d )
 

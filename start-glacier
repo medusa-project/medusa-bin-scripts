@@ -3,6 +3,8 @@
 HOME=/services/medusa
 GLACIER_HOME=$HOME/medusa-glacier
 
+ionice -c2 -n5 -p$$
+
 #Start Glacier server
 echo "Starting Glacier server"
 (cd $GLACIER_HOME ; ./medusa_glacier.sh start)
