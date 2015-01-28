@@ -5,8 +5,8 @@ MEDUSA_HOME=$HOME/medusa
 FITS_SERVER_HOME=$HOME/ruby-fits-server
 export RAILS_ENV=production
 
-if [ -f ~/.delayed_job_web_credentials ]; then
-    source ~/.delayed_job_web_credentials
+if [ -f $HOME/.delayed_job_web_credentials ]; then
+    source $HOME/.delayed_job_web_credentials
 fi
 
 #Start local FITS server
