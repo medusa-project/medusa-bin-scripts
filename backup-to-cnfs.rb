@@ -2,7 +2,7 @@
 require 'pathname'
 require 'date'
 
-hostname = `hostname -s`
+hostname = `hostname -s`.chomp
 BACKUP_ROOT = "/mnt/cnfs/medusa_misc/backup/#{hostname}"
 GLACIER_ROOT = '/services/medusa/medusa-glacier'
 MEDUSA_SHARED_ROOT = '/services/medusa/medusa-rails3-capistrano/shared'
