@@ -1,0 +1,10 @@
+#!/bin/bash --login
+
+HOME=/services/medusa
+MEDUSA_HOME=$HOME/medusa
+export RAILS_ENV=production
+
+#Refresh cfs stats from the db
+( cd $MEDUSA_HOME ; bundle exec rake medusa:cfs_stats:refresh )
+
+exit 0
