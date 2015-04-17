@@ -16,4 +16,9 @@ $HOME/bin/stop-glacier
 # Stop PostgreSQL
 $HOME/bin/stop-postgres
 
+# Stop fedora stuff
+$HOME/bin/stop-fedora-indexing
+$HOME/bin/stop-solr
+$HOME/bin/stop-fedora
+
 # Stop whatever

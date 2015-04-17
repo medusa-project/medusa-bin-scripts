@@ -15,3 +15,8 @@ $HOME/bin/start-glacier
 
 # Start Rais
 $HOME/bin/start-rails
+
+#start fedora stuff
+$HOME/bin/start-fedora
+$HOME/bin/start-solr
+$HOME/bin/start-fedora-indexing
