@@ -31,7 +31,7 @@ class Backup < Object
   def backup_rails
     with_backup_dir('rails') do |dir, date|
       tar_directories(MEDUSA_SHARED_ROOT, dir, ['config', 'log'], date)
-      tar_directories(File.join(MEDUSA_SHARED_ROOT, 'system'), dir, ['attachments'], date)
+      tar_directories(File.join(MEDUSA_SHARED_ROOT, 'public', 'system'), dir, ['attachments'], date)
       delete_older_than(dir, 7)
     end
   end
