@@ -13,9 +13,6 @@ $HOME/bin/stop-rails
 # Stop Glacier server
 $HOME/bin/stop-glacier
 
-# Stop RabbitMQ
-$HOME/bin/stop-rabbitmq
-
 # Stop PostgreSQL
 $HOME/bin/stop-postgres
 

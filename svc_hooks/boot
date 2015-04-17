@@ -10,9 +10,6 @@ HOME=/services/medusa
 # Start PostgreSQL
 $HOME/bin/start-postgres
 
-# Start RabbitMQ
-$HOME/bin/start-rabbitmq
-
 # Start Glacier server
 $HOME/bin/start-glacier
 
