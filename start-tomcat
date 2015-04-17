@@ -1,6 +1,0 @@
-#!/bin/bash
-###
-### start-tomcat
-###
-
-/services/medusa/bin/tomcat-init start

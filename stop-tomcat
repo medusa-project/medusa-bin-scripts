@@ -1,6 +1,0 @@
-#!/bin/bash
-###
-### stop-tomcat
-###
-
-/services/medusa/bin/tomcat-init stop
