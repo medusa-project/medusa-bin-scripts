@@ -13,7 +13,7 @@ fi
 HOME=/services/medusa
 
 #Base path of Tomcat
-CATALINA_HOME=$HOME/tomcat
+CATALINA_HOME=$HOME/fedora-installation/tomcat
 
 #Base path of Ant
 ANT_HOME=$HOME/ant
@@ -30,6 +30,9 @@ JSSE_HOME=$JRE_HOME/lib
 CATALINA_OPTS="-server -Xms2048M -Xmx2048M -Dfile.encoding=UTF-8"
 
 JAVA_OPTS="-Dhttps.protocols=SSLv3"
+
+FEDORA_DATA_DIR=/mnt/cnfs/fedora/test
+JAVA_OPTS="$JAVA_OPTS -Dfcrepo.home=$FEDORA_DATA_DIR"
 
 #For Monit, no path has been set
 if [ -z $PATH ]; then 
