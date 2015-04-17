@@ -16,10 +16,12 @@ $HOME/bin/stop-tomcat
 # Stop Glacier server
 $HOME/bin/stop-glacier
 
-# Stop RabbitMQ
-$HOME/bin/stop-rabbitmq
-
 # Stop PostgreSQL
 $HOME/bin/stop-postgres
+
+# Stop fedora stuff
+$HOME/bin/stop-fedora-indexing
+$HOME/bin/stop-solr
+$HOME/bin/stop-fedora
 
 # Stop whatever

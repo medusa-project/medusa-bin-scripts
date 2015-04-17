@@ -10,14 +10,16 @@ HOME=/services/medusa
 # Start PostgreSQL
 $HOME/bin/start-postgres
 
-# Start RabbitMQ
-$HOME/bin/start-rabbitmq
-
 # Start Glacier server
 $HOME/bin/start-glacier
 
 # Start Tomcat
 #$HOME/bin/start-tomcat
 
-# Start Rais
+# Start Rails
 $HOME/bin/start-rails
+
+#start fedora stuff
+$HOME/bin/start-fedora
+$HOME/bin/start-solr
+$HOME/bin/start-fedora-indexing

@@ -3,7 +3,14 @@ require 'pathname'
 require 'date'
 
 hostname = `hostname -s`.chomp
-BACKUP_ROOT = "/mnt/cnfs/medusa_misc/backup/#{hostname}"
+BACKUP_ROOT = case hostname 
+              when 'medusaprod'
+                '/mnt/cnfs/medusa/production/backup'
+              when 'medusadev1'
+                '/mnt/cnfs/medusa/staging/backup'
+              else
+                raise RuntimeError, "Unknown medusa host: #{hostname}"
+              end
 GLACIER_ROOT = '/services/medusa/medusa-glacier'
 MEDUSA_SHARED_ROOT = '/services/medusa/medusa-cr-capistrano/shared'
 
