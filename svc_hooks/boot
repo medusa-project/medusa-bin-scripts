@@ -13,10 +13,7 @@ $HOME/bin/start-postgres
 # Start Glacier server
 $HOME/bin/start-glacier
 
-# Start Tomcat
-#$HOME/bin/start-tomcat
-
-# Start Rails
+# Start Rais
 $HOME/bin/start-rails
 
 #start fedora stuff
