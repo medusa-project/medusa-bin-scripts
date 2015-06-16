@@ -1,0 +1,14 @@
+#!/bin/bash --login
+
+HOME=/services/medusa
+FIXITY_HOME=$HOME/medusa-fixity
+
+#Make children have lower io and cpu priority
+ionice -c2 -n5 -p $$
+renice +4 -p $$
+
+#Start Fixity server
+echo "Starting Glacier server"
+(cd $FIXITY_HOME ; ./medusa_fixity.sh start)
+
+exit 0
