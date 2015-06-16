@@ -13,6 +13,9 @@ $HOME/bin/start-postgres
 # Start Glacier server
 $HOME/bin/start-glacier
 
+# Start Fixity server
+$HOME/bin/start-fixity
+
 # Start Rais
 $HOME/bin/start-rails
 

@@ -10,6 +10,9 @@ HOME=/services/medusa
 # Stop Rails
 $HOME/bin/stop-rails
 
+# Stop Fixity server
+$HOME/bin/stop-fixity
+
 # Stop Glacier server
 $HOME/bin/stop-glacier
 
