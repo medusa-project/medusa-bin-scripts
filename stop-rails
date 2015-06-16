@@ -5,6 +5,9 @@ MEDUSA_HOME=$HOME/medusa
 FITS_SERVER_HOME=$HOME/ruby-fits-server
 export RAILS_ENV=production
 
+#Stop daemon to pick up incoming messages
+( cd $MEDUSA_HOME ; bundle exec rake daemon:message_receiver:stop )
+
 #Stop delayed_job
 ( cd $MEDUSA_HOME ; bundle exec rake medusa:delayed_job:stop )
 

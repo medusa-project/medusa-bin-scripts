@@ -27,4 +27,7 @@ renice +4 -p $$
 #Start delayed_job
 ( cd $MEDUSA_HOME ; bundle exec rake medusa:delayed_job:start )
 
+#Start daemon to pick up incoming messages
+( cd $MEDUSA_HOME ; bundle exec rake daemon:message_receiver:start )
+
 exit 0
