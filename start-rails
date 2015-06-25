@@ -28,6 +28,8 @@ renice +4 -p $$
 ( cd $MEDUSA_HOME ; bundle exec rake medusa:delayed_job:start )
 
 #Start daemon to pick up incoming messages
-( cd $MEDUSA_HOME ; bundle exec rake daemon:message_receiver:start )
+#Use this script because cron may already have started it
+#while delayed job was starting
+$MEDUSA_HOME/bin/check-message-receiver-daemon
 
 exit 0

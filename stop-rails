@@ -5,14 +5,15 @@ MEDUSA_HOME=$HOME/medusa
 FITS_SERVER_HOME=$HOME/ruby-fits-server
 export RAILS_ENV=production
 
-#Stop daemon to pick up incoming messages
-( cd $MEDUSA_HOME ; bundle exec rake daemon:message_receiver:stop )
-
 #Stop delayed_job
 ( cd $MEDUSA_HOME ; bundle exec rake medusa:delayed_job:stop )
 
 # Stop Passenger
 ( cd $MEDUSA_HOME ; bundle exec passenger stop )
+
+#Stop daemon to pick up incoming messages
+#Stop after passenger so cron doesn't respawn
+( cd $MEDUSA_HOME ; bundle exec rake daemon:message_receiver:stop )
 
 #Stop local FITS server
 echo "Stopping local FITS server"
