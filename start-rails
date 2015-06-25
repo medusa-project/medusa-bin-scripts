@@ -30,6 +30,6 @@ renice +4 -p $$
 #Start daemon to pick up incoming messages
 #Use this script because cron may already have started it
 #while delayed job was starting
-$MEDUSA_HOME/bin/check-message-receiver-daemon
+$HOME/bin/check-message-receiver-daemon
 
 exit 0
