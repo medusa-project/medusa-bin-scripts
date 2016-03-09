@@ -17,7 +17,7 @@ $HOME/bin/stop-fixity
 $HOME/bin/stop-glacier
 
 # Stop PostgreSQL
-$HOME/bin/stop-postgres
+#$HOME/bin/stop-postgres
 
 # Stop fedora stuff
 $HOME/bin/stop-fedora-indexing

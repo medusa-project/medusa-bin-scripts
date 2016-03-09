@@ -24,7 +24,7 @@ class Backup < Object
   def backup
     backup_rails
     backup_glacier
-    backup_database
+#    backup_database
   end
 
   #Rails assets, etc.
