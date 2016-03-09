@@ -18,7 +18,7 @@ echo "Starting local FITS server"
 
 ionice -c2 -n1 -p $$
 # Start Passenger
-( cd $MEDUSA_HOME ; bundle install ; bundle exec passenger start -e production -d )
+( cd $MEDUSA_HOME ; bundle install ; bundle exec passenger start -e production -d --max-pool-size 12)
 
 #Make children have lower io and cpu priority 
 ionice -c2 -n5 -p $$       

@@ -8,7 +8,7 @@ HOME=/services/medusa
 . $HOME/.bashrc
 
 # Start PostgreSQL
-$HOME/bin/start-postgres
+#$HOME/bin/start-postgres
 
 # Start Glacier server
 $HOME/bin/start-glacier
@@ -20,6 +20,6 @@ $HOME/bin/start-fixity
 $HOME/bin/start-rails
 
 #start fedora stuff
-$HOME/bin/start-fedora
-$HOME/bin/start-solr
-$HOME/bin/start-fedora-indexing
+#$HOME/bin/start-fedora
+#$HOME/bin/start-solr
+#$HOME/bin/start-fedora-indexing
