@@ -16,7 +16,7 @@ $HOME/bin/start-glacier
 # Start Fixity server
 $HOME/bin/start-fixity
 
-# Start Rais
+# Start Rails
 $HOME/bin/start-rails
 
 #start fedora stuff
