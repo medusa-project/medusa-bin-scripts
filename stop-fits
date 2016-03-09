@@ -1,0 +1,10 @@
+#!/bin/bash --login
+
+HOME=/services/medusa
+FITS_SERVER_HOME=$HOME/ruby-fits-server
+
+#Stop local FITS server
+echo "Stopping local FITS server"
+(cd $FITS_SERVER_HOME ; ./stop.sh )
+
+exit 0

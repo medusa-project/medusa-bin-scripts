@@ -1,0 +1,10 @@
+#!/bin/bash --login
+
+HOME=/services/medusa
+FITS_SERVER_HOME=$HOME/ruby-fits-server
+
+#Start local FITS server
+echo "Starting local FITS server"
+(cd $FITS_SERVER_HOME ; ./start.sh )
+
+exit 0

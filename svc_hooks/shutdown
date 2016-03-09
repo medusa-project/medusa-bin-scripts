@@ -11,17 +11,9 @@ HOME=/services/medusa
 $HOME/bin/stop-rails
 
 # Stop Fixity server
-$HOME/bin/stop-fixity
+#$HOME/bin/stop-fixity
 
 # Stop Glacier server
-$HOME/bin/stop-glacier
-
-# Stop PostgreSQL
-#$HOME/bin/stop-postgres
-
-# Stop fedora stuff
-$HOME/bin/stop-fedora-indexing
-$HOME/bin/stop-solr
-$HOME/bin/stop-fedora
+#$HOME/bin/stop-glacier
 
 # Stop whatever

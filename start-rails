@@ -2,16 +2,11 @@
 
 HOME=/services/medusa
 MEDUSA_HOME=$HOME/medusa
-FITS_SERVER_HOME=$HOME/ruby-fits-server
 export RAILS_ENV=production
 
 if [ -f $HOME/.delayed_job_web_credentials ]; then
     source $HOME/.delayed_job_web_credentials
 fi
-
-#Start local FITS server
-echo "Starting local FITS server"
-(cd $FITS_SERVER_HOME ; ./start.sh )
 
 #Clear Rails cache
 ( cd $MEDUSA_HOME ; bundle exec rake medusa:rails_cache:clear )
