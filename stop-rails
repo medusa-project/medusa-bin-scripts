@@ -4,9 +4,6 @@ HOME=/services/medusa
 MEDUSA_HOME=$HOME/medusa
 export RAILS_ENV=production
 
-#Stop delayed_job
-( cd $MEDUSA_HOME ; bundle exec rake medusa:delayed_job:stop )
-
 # Stop Passenger
 ( cd $MEDUSA_HOME ; bundle exec passenger stop )
 

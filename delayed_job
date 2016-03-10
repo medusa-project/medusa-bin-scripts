@@ -1,0 +1,24 @@
+#!/bin/bash --login
+
+#start a delayed job with 
+#delayed_job <start|stop> queue worker-number
+#designed to work well with monit
+
+MEDUSA_HOME=$HOME/medusa
+export RAILS_ENV=production
+
+ACTION=$1
+QUEUE=$2
+WORKER_NUM=$3
+
+PID_DIR=$MEDUSA_HOME/tmp/pids/delayed_job/$QUEUE
+
+mkdir -p $PID_DIR
+
+ionice -c2 -n5 -p $$
+renice +4 -p $$
+
+#for rvm
+cd $MEDUSA_HOME
+
+./script/delayed_job -i $WORKER_NUM --queue=$QUEUE --pid-dir=$PID_DIR $ACTION
