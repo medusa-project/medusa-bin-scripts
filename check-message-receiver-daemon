@@ -16,12 +16,12 @@ then
     exit 0
 fi
 
-$(rake daemon:message_receiver:status 2> $STDERR_FILE)
+$(bundle exec rake daemon:message_receiver:status 2> $STDERR_FILE)
 ERR=$(cat $STDERR_FILE)
 
 if [[ $ERR == *"no instances running"* ]]
 then
-	rake daemon:message_receiver:start
+	bundle exec rake daemon:message_receiver:start
 fi
 
 rm $STDERR_FILE

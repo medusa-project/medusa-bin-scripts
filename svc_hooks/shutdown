@@ -8,7 +8,10 @@ HOME=/services/medusa
 . $HOME/.bashrc
 
 # Stop Rails
-$HOME/bin/stop-rails
+#$HOME/bin/stop-rails
+
+# Stop fits
+#$HOME/bin/stop-fits
 
 # Stop Fixity server
 #$HOME/bin/stop-fixity

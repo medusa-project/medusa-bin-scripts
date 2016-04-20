@@ -13,5 +13,8 @@ HOME=/services/medusa
 # Start Fixity server
 #$HOME/bin/start-fixity
 
+# Start fits
+#$HOME/bin/start-fits
+
 # Start Rails
-$HOME/bin/start-rails
+#$HOME/bin/start-rails

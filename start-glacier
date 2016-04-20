@@ -9,6 +9,8 @@ renice +4 -p $$
 
 #Start Glacier server
 echo "Starting Glacier server"
-(cd $GLACIER_HOME ; ./medusa_glacier.sh start)
+cd $GLACIER_HOME 
+./medusa_glacier.sh stop
+./medusa_glacier.sh start
 
 exit 0

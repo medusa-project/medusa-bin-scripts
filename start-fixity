@@ -9,6 +9,8 @@ renice +4 -p $$
 
 #Start Fixity server
 echo "Starting fixity server"
-(cd $FIXITY_HOME ; ./medusa_fixity.sh start)
+cd $FIXITY_HOME 
+./medusa_fixity.sh stop
+./medusa_fixity.sh start
 
 exit 0
