@@ -15,7 +15,7 @@ if [[ -f $PID_FILE ]]; then
 	exit 0
     else
 	echo "Removing stale PID file"
-	rm $PID_FILE
+	rm -f $PID_FILE
     fi
 fi
 
@@ -24,5 +24,5 @@ echo "Running fits batch"
 echo $$ > $PID_FILE
 ionice -c2 -n6 -p $$
 bundle exec rake fits:run_batch
-rm $PID_FILE
+rm -f $PID_FILE
 exit 0
