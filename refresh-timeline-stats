@@ -1,0 +1,10 @@
+#!/bin/bash --login
+
+HOME=/services/medusa
+MEDUSA_HOME=$HOME/medusa
+export RAILS_ENV=production
+
+#Refresh timeline stats
+( cd $MEDUSA_HOME ; bundle exec rake timeline:compute_stats )
+
+exit 0
