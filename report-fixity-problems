@@ -1,0 +1,10 @@
+#!/bin/bash --login
+
+HOME=/services/medusa
+MEDUSA_HOME=$HOME/medusa
+export RAILS_ENV=production
+
+cd $MEDUSA_HOME 
+bundle exec rake fixity:report_problems
+
+exit 0
