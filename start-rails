@@ -13,7 +13,7 @@ fi
 
 ionice -c2 -n1 -p $$
 # Start Passenger
-( cd $MEDUSA_HOME ; bundle install ; bundle exec passenger start -e production -d --max-pool-size 12)
+( cd $MEDUSA_HOME ; bundle install ; bundle exec passenger start -e production -d --max-pool-size 20 )
 
 #Start daemon to pick up incoming messages
 #Use this script because cron may already have started it
