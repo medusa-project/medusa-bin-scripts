@@ -1,0 +1,11 @@
+#!/bin/bash --login
+
+HOME=/services/medusa
+FITS_SERVER_HOME=$HOME/ruby-fits-server-2
+
+#Start local FITS server
+echo "Starting local FITS server"
+cd $FITS_SERVER_HOME
+./run-amqp.sh start
+
+exit 0
