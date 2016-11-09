@@ -3,7 +3,7 @@
 PID_FILE=/tmp/fits_batch.pid
 MEDUSA_HOME=/services/medusa/medusa
 export RAILS_ENV=production
-export FITS_BATCH_SIZE=50000
+export FITS_BATCH_SIZE=200000
 
 if [[ -f $PID_FILE ]]; then
     echo "Existing PID file found"
