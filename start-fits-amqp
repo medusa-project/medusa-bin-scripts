@@ -6,6 +6,7 @@ FITS_SERVER_HOME=$HOME/ruby-fits-server
 #Start local FITS server
 echo "Starting local FITS server"
 cd $FITS_SERVER_HOME
+./run-amqp.sh stop
 ./run-amqp.sh start
 
 exit 0
