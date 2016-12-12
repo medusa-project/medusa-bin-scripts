@@ -3,6 +3,10 @@
 HOME=/services/medusa
 FITS_SERVER_HOME=$HOME/ruby-fits-server
 
+#Make children have lower io and cpu priority
+ionice -c2 -n5 -p $$
+renice +4 -p $$
+
 #Start local FITS server
 echo "Starting local FITS server"
 cd $FITS_SERVER_HOME
