@@ -1,0 +1,12 @@
+#!/bin/bash --login
+#refresh the file extension and content type by collection cache
+#tables
+
+HOME=/services/medusa
+MEDUSA_HOME=$HOME/medusa
+export RAILS_ENV=production
+
+#Refresh cfs stats from the db
+( cd $MEDUSA_HOME ; bundle exec rake medusa:ct_and_fe_stats:refresh )
+
+exit 0
