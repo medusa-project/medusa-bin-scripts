@@ -1,7 +1,6 @@
 #!/bin/bash --login
 
-HOME=/services/medusa
-GLACIER_HOME=$HOME/medusa-glacier
+source $HOME/bin/env.sh
 
 #Stop Glacier server
 echo "Stopping Glacier server"

@@ -1,8 +1,6 @@
 #!/bin/bash --login
 
-HOME=/services/medusa
-MEDUSA_HOME=$HOME/medusa
-export RAILS_ENV=production
+source $HOME/bin/env.sh
 
 if [ -f $HOME/.delayed_job_web_credentials ]; then
     source $HOME/.delayed_job_web_credentials

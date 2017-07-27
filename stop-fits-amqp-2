@@ -1,11 +1,10 @@
 #!/bin/bash --login
 
-HOME=/services/medusa
-FITS_SERVER_HOME=$HOME/ruby-fits-server-2
+source $HOME/bin/env.sh
 
 #Stop local FITS server
-echo "Stopping local FITS server"
-cd $FITS_SERVER_HOME
+echo "Stopping local FITS server 2"
+cd $FITS_SERVER_HOME_2
 ./run-amqp.sh stop
 
 exit 0

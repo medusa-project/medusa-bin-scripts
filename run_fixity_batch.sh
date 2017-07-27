@@ -1,9 +1,9 @@
 #!/bin/bash --login
 
+source $HOME/bin/env.sh
+
 PID_FILE=/tmp/fixity_batch.pid
-MEDUSA_HOME=/services/medusa/medusa
-export RAILS_ENV=production
-export BATCH_SIZE=20000
+export BATCH_SIZE=$FIXITY_BATCH_SIZE
 
 if [[ -f $PID_FILE ]]; then
     echo "Existing PID file found"

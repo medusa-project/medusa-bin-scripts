@@ -1,10 +1,8 @@
 #!/bin/bash --login
 
-#Check if medusa's message receiver daemon is up; if not then restart it
+source $HOME/bin/env.sh
 
-export RAILS_ENV=production
-HOME=/services/medusa
-MEDUSA_DIR=$HOME/medusa
+#Check if medusa's message receiver daemon is up; if not then restart it
 STDERR_FILE=/tmp/message_receiver.err
 
 cd $MEDUSA_DIR

@@ -1,6 +1,6 @@
 #!/bin/bash --login
 
-HOME=/services/medusa
+source $HOME/bin/env.sh
 
 #Make children have lower io and cpu priority
 ionice -c2 -n5 -p $$

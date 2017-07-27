@@ -1,7 +1,6 @@
 #!/bin/bash --login
 
-HOME=/services/medusa
-FITS_SERVER_HOME=$HOME/ruby-fits-server-2
+source $HOME/bin/env.sh
 
 #Make children have lower io and cpu priority
 ionice -c2 -n5 -p $$
@@ -9,7 +8,7 @@ renice +4 -p $$
 
 #Start local FITS server
 echo "Starting local FITS server"
-cd $FITS_SERVER_HOME
+cd $FITS_SERVER_HOME_2
 ./run-amqp.sh stop
 ./run-amqp.sh start
 

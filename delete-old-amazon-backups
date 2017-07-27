@@ -1,8 +1,6 @@
 #!/bin/bash --login
 
-HOME=/services/medusa
-MEDUSA_HOME=$HOME/medusa
-export RAILS_ENV=production
+source $HOME/bin/env.sh
 
 #Delete backups older than 90 days from Amazon Glacier, and the records from the CR. 
 #USE ONLY ON STAGING SERVER

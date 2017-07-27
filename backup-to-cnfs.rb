@@ -2,17 +2,14 @@
 require 'pathname'
 require 'date'
 
-hostname = `hostname -s`.chomp
-BACKUP_ROOT = case hostname 
-              when 'medusaprod'
-                '/mnt/cnfs/medusa/production/backup'
-              when 'medusadev1'
-                '/mnt/cnfs/medusa/staging/backup'
-              else
-                raise RuntimeError, "Unknown medusa host: #{hostname}"
-              end
-GLACIER_ROOT = '/services/medusa/medusa-glacier'
-MEDUSA_SHARED_ROOT = '/services/medusa/medusa-cr-capistrano/shared'
+BACKUP_ROOT = ENV['BACKUP_STORAGE_ROOT']
+GLACIER_ROOT = ENV['BACKUP_GLACIER_ROOT']
+MEDUSA_SHARED_ROOT = ENV['BACKUP_MEDUSA_SHARED_ROOT']
+
+unless BACKUP_ROOT and GLACIER_ROOT and MEDUSA_SHARED_ROOT
+  puts "Some necessary environment variables not defined. Exiting."
+  exit 1
+end
 
 #Back up things from the operational storage to the NCSA storage.
 class Backup < Object

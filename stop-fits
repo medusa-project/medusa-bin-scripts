@@ -1,7 +1,6 @@
 #!/bin/bash --login
 
-HOME=/services/medusa
-FITS_SERVER_HOME=$HOME/ruby-fits-server
+source $HOME/bin/env.sh
 
 #Stop local FITS server
 echo "Stopping local FITS server"

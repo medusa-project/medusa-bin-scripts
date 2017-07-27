@@ -1,11 +1,10 @@
 #!/bin/bash --login
 
+source $HOME/bin/env.sh
+
 #start a delayed job with 
 #delayed_job <start|stop> queue worker-number
 #designed to work well with monit
-
-MEDUSA_HOME=$HOME/medusa
-export RAILS_ENV=production
 
 ACTION=$1
 QUEUE=$2

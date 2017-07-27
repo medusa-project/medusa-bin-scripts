@@ -1,8 +1,6 @@
 #!/bin/bash --login
 
-HOME=/services/medusa
-MEDUSA_HOME=$HOME/medusa
-export RAILS_ENV=production
+source $HOME/bin/env.sh
 
 ( cd $MEDUSA_HOME ; bundle exec rake medusa:schedule_amqp_amazon_backups )
 

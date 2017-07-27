@@ -1,10 +1,9 @@
 #!/bin/bash --login
 
-HOME=/services/medusa
-FIXITY_HOME=$HOME/medusa-fixity
+source $HOME/bin/env.sh
 
 #Stop Glacier server
 echo "Stopping Fixity server"
-(cd $FIXITY_HOME ; ./medusa_fixity.sh stop)
+(cd $FIXITY_SERVER_HOME ; ./medusa_fixity.sh stop)
 
 exit 0
