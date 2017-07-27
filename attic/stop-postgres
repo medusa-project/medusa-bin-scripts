@@ -1,6 +1,0 @@
-#!/bin/bash
-###
-### stop-postgres
-###
-
-/usr/bin/pg_ctl stop -m fast -D /services/medusa/pgsql/data

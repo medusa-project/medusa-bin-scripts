@@ -1,6 +1,0 @@
-#!/bin/bash
-###
-### start-postgres
-###
-
-/usr/bin/pg_ctl -D /services/medusa/pgsql/data start
