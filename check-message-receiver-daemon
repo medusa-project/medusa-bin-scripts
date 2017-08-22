@@ -7,7 +7,7 @@ STDERR_FILE=/tmp/message_receiver.err
 
 cd $MEDUSA_DIR
 
-PASSENGER_STATUS=$(passenger status)
+PASSENGER_STATUS=$(bundle exec passenger status)
 if [[ $PASSENGER_STATUS != "Phusion Passenger Standalone is running on PID"* ]]
 then
     echo "Passenger is not running - will not start message receiver daemon"
