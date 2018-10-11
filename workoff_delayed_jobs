@@ -1,0 +1,8 @@
+#!/bin/bash --login
+
+source $HOME/bin/env.sh
+
+cd $MEDUSA_HOME
+ionice -c2 -n6 -p $$
+bundle exec rake jobs:workoff
+
