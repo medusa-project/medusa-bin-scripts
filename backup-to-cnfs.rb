@@ -3,10 +3,9 @@ require 'pathname'
 require 'date'
 
 BACKUP_ROOT = ENV['BACKUP_STORAGE_ROOT']
-GLACIER_ROOT = ENV['BACKUP_GLACIER_ROOT']
 MEDUSA_SHARED_ROOT = ENV['BACKUP_MEDUSA_SHARED_ROOT']
 
-unless BACKUP_ROOT and GLACIER_ROOT and MEDUSA_SHARED_ROOT
+unless BACKUP_ROOT and MEDUSA_SHARED_ROOT
   puts "Some necessary environment variables not defined. Exiting."
   exit 1
 end
@@ -20,7 +19,7 @@ class Backup < Object
 
   def backup
     backup_rails
-    backup_glacier
+#    backup_glacier
 #    backup_database
   end
 
