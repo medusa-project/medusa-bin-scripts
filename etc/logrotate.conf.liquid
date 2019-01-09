@@ -3,7 +3,7 @@ weekly
 minsize 10M
 
 # Create new (empty) log files after rotating old ones
-create 644 medusa medusa
+create 644 {{ user }} {{ user }}
 
 # Keep log files for 8 weeks
 rotate 8
@@ -14,7 +14,7 @@ compress
 ###
 # Rotate production log file
 ###
-/home/lib-medusa-collectionregistry/medusa/log/production.log {
+{{ medusa_home }}/log/production.log {
     # Don't throw an error if its missing
     missingok
 
@@ -25,7 +25,7 @@ compress
 ###
 # Rotate delayed job log
 ###
-/home/lib-medusa-collectionregistry/medusa/log/delayed_job.log {
+{{ medusa_home }}/log/delayed_job.log {
     missingok
     notifempty	
     daily
@@ -35,7 +35,7 @@ compress
 ###
 # Rotate passenger log file
 ###
-/home/lib-medusa-collectionregistry/medusa/log/passenger.3000.log {
+{{ medusa_home }}/log/passenger.3000.log {
     missingok
     notifempty	
 }
@@ -43,12 +43,12 @@ compress
 ###
 # Rotate oink log file
 ###
-/home/lib-medusa-collectionregistry/medusa/log/oink.log {
+{{ medusa_home }}/log/oink.log {
     missingok
     notifempty	
 }
 
-/home/lib-medusa-collectionregistry/medusa/medusa/message_receiver.rb.log {
+{{ medusa_home }}/log/message_receiver.rb.log {
     missingok
     notifempty
     size 100M						     
@@ -57,12 +57,7 @@ compress
 ###
 # Rotate ruby-fits-server log files
 ###
-/home/lib-medusa-collectionregistry/ruby-fits-server/log/ruby-fits-server.log {
-    missingok
-    notifempty	
-    size 100M
-}
-/home/lib-medusa-collectionregistry/ruby-fits-server-2/log/ruby-fits-server.log {
+{{ fits_server_home }}/log/ruby-fits-server.log {
     missingok
     notifempty	
     size 100M

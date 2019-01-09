@@ -1,0 +1,67 @@
+set daemon 60
+set httpd port 2812
+    allow localhost
+set alert {{ monit_contact}}
+set mailserver {{ monit_mailserver }}
+
+### mounts
+
+##check local disk space          
+check filesystem rootfs with path /
+  if space usage > 85% for 8 cycles then alert     
+  alert medusa-admin@lists.illinois.edu 
+
+check process fixity-server with pidfile {{ fixity_server_home }}/run/medusa_fixity.pid
+  start program = "{{ home }}/bin/start-fixity"
+  stop program = "{{ home }}/bin/stop-fixity"
+
+check process fits-server with pidfile {{ fits_server_home }}/tmp/pids/ruby-fits-server.pid
+  start program = "{{ home }}/bin/start-fits"
+  stop program = "{{ home }}/bin/stop-fits"
+
+check process fits-amqp-server with pidfile {{ fits_server_home}}/run/ruby-fits-server-amqp.pid
+  start program = "{{ home }}/bin/start-fits-amqp"
+  stop program = "{{ home }}/bin/stop-fits-amqp"
+
+##collection registry proper
+check process collection-registry with pidfile {{ medusa_home }}/tmp/pids/passenger.3000.pid
+  group rails
+  start program = "{{ home }}/bin/start-rails"
+  stop program = "{{ home }}/bin/stop-rails"
+
+##delayed_job processes
+check process delayed-job-default-1 with pidfile {{ medusa_home }}/tmp/pids/delayed_job/default/delayed_job.1.pid
+  group rails
+  group delayed_job
+  start program = "{{ home }}/bin/delayed_job start default 1"
+  stop program = "{{ home }}/bin/delayed_job stop default 1"
+check process delayed-job-default-2 with pidfile {{ medusa_home }}/tmp/pids/delayed_job/default/delayed_job.2.pid
+  group rails
+  group delayed_job
+  start program = "{{ home }}/bin/delayed_job start default 2"
+  stop program = "{{ home }}/bin/delayed_job stop default 2"
+
+check process delayed-job-ideals-1 with pidfile {{ medusa_home }}/tmp/pids/delayed_job/ideals/delayed_job.1.pid
+  group rails
+  group delayed_job
+  start program = "{{ home }}/bin/delayed_job start ideals 1"
+  stop program = "{{ home }}/bin/delayed_job stop ideals 1"
+
+check process delayed-job-initial-assessment-1 with pidfile {{ medusa_home }}/tmp/pids/delayed_job/initial_assessment/delayed_job.1.pid
+  group rails
+  group delayed_job
+  start program = "{{ home }}/bin/delayed_job start initial_assessment 1"
+  stop program = "{{ home }}/bin/delayed_job stop initial_assessment 1"
+
+check process delayed-job-book-tracker-1 with pidfile {{ medusa_home }}/tmp/pids/delayed_job/book_tracker/delayed_job.1.pid
+  group rails
+  group delayed_job
+  start program = "{{ home }}/bin/delayed_job start book_tracker 1"
+  stop program = "{{ home }}/bin/delayed_job stop book_tracker 1"
+
+check process delayed-job-idb-1 with pidfile {{ medusa_home }}/tmp/pids/delayed_job/idb/delayed_job.1.pid
+  group rails
+  group delayed_job
+  start program = "{{ home }}/bin/delayed_job start idb 1"
+  stop program = "{{ home }}/bin/delayed_job stop idb 1"
+
