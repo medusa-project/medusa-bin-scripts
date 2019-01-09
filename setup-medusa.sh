@@ -79,7 +79,7 @@ rbenv global $MEDUSA_RUBY_VERSION
 rbenv shell $MEDUSA_RUBY_VERSION
 
 echo "Installing config files - copies will be in $HOME/bin/etc."
-echo "Note that this does NOT include collection registy configs."
+echo "Note that this does NOT include collection registry, fixity, fits configs."
 cd $HOME/bin
 ruby setup-config.rb
 cd $HOME/bin/etc
@@ -91,8 +91,6 @@ cp logrotate.conf $HOME/etc/logrotate.conf
 echo "Installed logrotate.conf"
 crontab crontab
 echo "Installed crontab"
-#fixity config
-#fits config
 
 echo "Linking medusa to capistrano current - note the latter may not exist yet"
 ln -nsf $CAPISTRANO_DIR/current $MEDUSA_DIR
