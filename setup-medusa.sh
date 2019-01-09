@@ -26,7 +26,7 @@ if [[ ! -d ~/.rbenv ]]; then
     git clone https://github.com/rbenv/rbenv-vars.git "$(rbenv root)/plugins/rbenv-vars"
     git clone https://github.com/rbenv/rbenv-default-gems.git "$(rbenv root)/plugins/rbenv-default-gems"
     if [ ! -f $(rbenv root)/default-gems ]; then
-	echo "bundler" > $(rbenv root)/default-gems
+	echo "bundler ~>1.16" > $(rbenv root)/default-gems
 	echo "liquid" >> $(rbenv root)/default-gems
     fi
 else
@@ -36,7 +36,7 @@ fi
 
 #Get checkouts of fixity and fits servers for actual use.
 #Get temp checkout of collection registry for use in installing ruby.
-MEDUSA_TEMP_CHECKOUT_DIR=$HOME/tmp/medusa-collection_registry
+MEDUSA_TEMP_CHECKOUT_DIR=$HOME/tmp/medusa-collection-registry
 mkdir -p $HOME/tmp
 if [[ ! -d $MEDUSA_TEMP_CHECKOUT_DIR ]]; then
     echo "Getting temporary collection registry checkout"
