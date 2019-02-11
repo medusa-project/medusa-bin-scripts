@@ -5,6 +5,6 @@ source $HOME/bin/env.sh
 #Stop local FITS server
 echo "Stopping local FITS server 2"
 cd $FITS_SERVER_HOME_2
-./run-amqp.sh stop
+./run-queue.sh stop
 
 exit 0

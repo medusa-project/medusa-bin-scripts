@@ -11,25 +11,25 @@
 */2 * * * * $HOME/bin/check-message-receiver-daemon
 
 #update the medusa timeline stats
-30 1 * * * $HOME/bin/refresh-timeline-stats
+#30 1 * * * $HOME/bin/refresh-timeline-stats
 
 #update the file extension and content type by collection
 #cache tables
-15 */6 * * * $HOME/bin/refresh-file-stats
+#15 */6 * * * $HOME/bin/refresh-file-stats
 
 #send email if there are any fixity issues
-30 2 * * * $HOME/bin/report-fixity-problems
+#30 2 * * * $HOME/bin/report-fixity-problems
 
 #run a fits batch - the script itself will make sure that only one copy 
 #is running at a time, and it's cheap to try frequently
-*/1 * * * * $HOME/bin/run_fits_batch.sh
+#*/1 * * * * $HOME/bin/run_fits_batch.sh
 
 #run a fixity batch - the script itself will make sure that only one copy 
 #is running at a time, and it's cheap to try every minute
-*/1 * * * * $HOME/bin/run_fixity_batch.sh
+#*/1 * * * * $HOME/bin/run_fixity_batch.sh
 
 #schedule amazon backup for amqp accrual groups
-15 3 * * Thu $HOME/bin/schedule-amqp-amazon-backups
+#15 3 * * Thu $HOME/bin/schedule-amqp-amazon-backups
 
 #monit
 @reboot monit -d 60 -c $HOME/.monitrc
