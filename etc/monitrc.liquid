@@ -19,9 +19,9 @@ check process fits-server with pidfile {{ fits_server_home }}/tmp/pids/ruby-fits
   start program = "{{ home }}/bin/start-fits"
   stop program = "{{ home }}/bin/stop-fits"
 
-check process fits-amqp-server with pidfile {{ fits_server_home}}/run/ruby-fits-server-amqp.pid
-  start program = "{{ home }}/bin/start-fits-amqp"
-  stop program = "{{ home }}/bin/stop-fits-amqp"
+check process fits-queue-server with pidfile {{ fits_server_home}}/run/ruby-fits-server-queue.pid
+  start program = "{{ home }}/bin/start-fits-queue"
+  stop program = "{{ home }}/bin/stop-fits-queue"
 
 ##collection registry proper
 check process collection-registry with pidfile {{ medusa_home }}/tmp/pids/passenger.3000.pid
