@@ -8,8 +8,8 @@ renice +4 -p $$
 
 #Start local FITS server
 echo "Starting local FITS server"
-cd $FITS_SERVER_HOME
-./run-amqp.sh stop
-./run-amqp.sh start
+cd $FITS_SERVER_HOME_2
+./run-queue.sh stop
+./run-queue.sh start
 
 exit 0
