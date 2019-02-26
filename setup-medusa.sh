@@ -49,10 +49,13 @@ fi
 if [[ ! -d $FITS_SERVER_HOME ]]; then
     echo "Getting FITS server code"
     git clone https://github.com/medusa-project/ruby-fits-server.git $FITS_SERVER_HOME
+    git submodule init
+    git submodule update
 else
     echo "Updating FITS server code"
     cd $FITS_SERVER_HOME
     git pull
+    git submodule update
 fi
 if [[ ! -d $FIXITY_SERVER_HOME ]]; then
     echo "Getting fixity server code"
