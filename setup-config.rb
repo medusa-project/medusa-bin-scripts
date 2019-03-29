@@ -7,6 +7,7 @@ Liquid::Template.error_mode = :strict
 common_vars = Hash.new.tap do |h|
   env_vars = %w(monit_contact monit_mailserver user
                 home fixity_server_home fits_server_home medusa_home
+                rclone_mountpoint
                 )
   env_vars.each do |var|
     h[var] = ENV[var.upcase]

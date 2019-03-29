@@ -65,3 +65,6 @@ check process delayed-job-idb-1 with pidfile {{ medusa_home }}/tmp/pids/delayed_
   start program = "{{ home }}/bin/delayed_job start idb 1"
   stop program = "{{ home }}/bin/delayed_job stop idb 1"
 
+check filesystem rclone-mount path {{ rclone_mountpoint }}
+  start program = "{{ home }}/bin/rclone-mount.sh"
+  stop program = "{{ home }}/bin/rclone-unmount.sh"
