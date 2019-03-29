@@ -21,3 +21,6 @@ yum $YUMOPTS groupinstall 'Development Tools'
 
 #install yarn globally
 npm install -g yarn
+
+#install rclone
+curl https://rclone.org/install.sh | sudo bash
