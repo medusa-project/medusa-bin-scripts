@@ -1,4 +1,4 @@
 #!/bin/bash
 source ./env.sh
 
-fusermount -uz $RCLONE_MOUNTPOINT
+mountpoint $RCLONE_MOUNTPOINT && fusermount -uz $RCLONE_MOUNTPOINT
