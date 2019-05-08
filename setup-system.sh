@@ -24,3 +24,7 @@ npm install -g yarn
 
 #install rclone
 curl https://rclone.org/install.sh | sudo bash
+
+#enable and start memcached
+systemctl enable memcached
+systemctl start memcached
