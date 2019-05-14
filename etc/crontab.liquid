@@ -1,3 +1,5 @@
+MAILTO=""
+
 #Rotate logs as appropriate
 0 3 * * * /usr/sbin/logrotate -s $HOME/etc/logrotate.status $HOME/etc/logrotate.conf
 
@@ -27,8 +29,9 @@
 
 #run a fixity batch - the script itself will make sure that only one copy 
 #is running at a time, and it's cheap to try every minute
-*/1 0-5,18-23 * * 1-5 $HOME/bin/run_fixity_batch.sh
-*/1 * * * 6-7 $HOME/bin/run_fixity_batch.sh
+#*/1 0-5,18-23 * * 1-5 $HOME/bin/run_fixity_batch.sh
+#*/1 * * * 6-7 $HOME/bin/run_fixity_batch.sh
+*/1 * * * * $HOME/bin/run_fixity_batch.sh
 
 #schedule amazon backup for amqp accrual groups
 #15 3 * * Thu $HOME/bin/schedule-amqp-amazon-backups

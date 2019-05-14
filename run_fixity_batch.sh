@@ -23,6 +23,6 @@ cd $MEDUSA_HOME
 echo "Running fixity batch"
 echo $$ > $PID_FILE
 ionice -c2 -n6 -p $$
-bundle exec rake fixity:run_batch
+nice -n 10 bundle exec rake fixity:run_batch
 rm -f $PID_FILE
 exit 0

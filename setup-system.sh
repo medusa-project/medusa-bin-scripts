@@ -13,7 +13,7 @@ YUM_PACKAGES="emacs-nox gcc nodejs monit"
 #ruby
 YUM_PACKAGES="$YUM_PACKAGES bzip2 openssl-devel readline-devel"
 #needed for rails app
-YUM_PACKAGES="$YUM_PACKAGES libcurl-devel postgresql-devel gcc-c++ file-devel"
+YUM_PACKAGES="$YUM_PACKAGES libcurl-devel postgresql-devel gcc-c++ file-devel libmemcached memcached"
 yum $YUMOPTS install $YUM_PACKAGES
 
 #I didn't get the necessary g++ until I installed this
@@ -21,3 +21,10 @@ yum $YUMOPTS groupinstall 'Development Tools'
 
 #install yarn globally
 npm install -g yarn
+
+#install rclone
+curl https://rclone.org/install.sh | sudo bash
+
+#enable and start memcached
+systemctl enable memcached
+systemctl start memcached

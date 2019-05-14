@@ -22,6 +22,6 @@ cd $MEDUSA_HOME
 echo "Running fits batch"
 echo $$ > $PID_FILE
 ionice -c2 -n6 -p $$
-bundle exec rake fits:run_amqp_batch
+nice -n 10 bundle exec rake fits:run_amqp_batch
 rm -f $PID_FILE
 exit 0
