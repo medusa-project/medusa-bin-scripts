@@ -53,12 +53,6 @@ check process delayed-job-initial-assessment-1 with pidfile {{ medusa_home }}/tm
   start program = "{{ home }}/bin/delayed_job start initial_assessment 1"
   stop program = "{{ home }}/bin/delayed_job stop initial_assessment 1"
 
-check process delayed-job-book-tracker-1 with pidfile {{ medusa_home }}/tmp/pids/delayed_job/book_tracker/delayed_job.1.pid
-  group rails
-  group delayed_job
-  start program = "{{ home }}/bin/delayed_job start book_tracker 1"
-  stop program = "{{ home }}/bin/delayed_job stop book_tracker 1"
-
 check process delayed-job-idb-1 with pidfile {{ medusa_home }}/tmp/pids/delayed_job/idb/delayed_job.1.pid
   group rails
   group delayed_job
