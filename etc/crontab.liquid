@@ -20,7 +20,7 @@ MAILTO=""
 15 */6 * * * $HOME/bin/refresh-file-stats
 
 #send email if there are any fixity issues
-30 2 * * * $HOME/bin/report-fixity-problems
+#30 2 * * * $HOME/bin/report-fixity-problems
 
 #run a fits batch - the script itself will make sure that only one copy 
 #is running at a time, and it's cheap to try frequently
@@ -31,7 +31,7 @@ MAILTO=""
 #is running at a time, and it's cheap to try every minute
 #*/1 0-5,18-23 * * 1-5 $HOME/bin/run_fixity_batch.sh
 #*/1 * * * 6-7 $HOME/bin/run_fixity_batch.sh
-*/1 * * * * $HOME/bin/run_fixity_batch.sh
+#*/1 * * * * $HOME/bin/run_fixity_batch.sh
 
 #schedule amazon backup for amqp accrual groups
 #15 3 * * Thu $HOME/bin/schedule-amqp-amazon-backups
