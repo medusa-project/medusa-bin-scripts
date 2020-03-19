@@ -46,6 +46,12 @@ check process delayed-job-ideals-1 with pidfile {{ medusa_home }}/tmp/pids/delay
   group delayed_job
   start program = "{{ home }}/bin/delayed_job start ideals 1"
   stop program = "{{ home }}/bin/delayed_job stop ideals 1"
+  
+check process delayed-job-ideals-1 with pidfile {{ medusa_home }}/tmp/pids/delayed_job/dspace/delayed_job.1.pid
+  group rails
+  group delayed_job
+  start program = "{{ home }}/bin/delayed_job start dspace 1"
+  stop program = "{{ home }}/bin/delayed_job stop dspace 1"  
 
 check process delayed-job-initial-assessment-1 with pidfile {{ medusa_home }}/tmp/pids/delayed_job/initial_assessment/delayed_job.1.pid
   group rails
