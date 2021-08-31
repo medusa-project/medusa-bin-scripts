@@ -11,7 +11,7 @@ fi
 
 ionice -c2 -n1 -p $$
 # Start Passenger
-( cd $MEDUSA_HOME ; bundle install ; bundle exec passenger start -e production -d --max-pool-size 20 )
+( cd $MEDUSA_HOME ; bundle install ; bundle exec passenger start -e production -d --nginx-config-template nginx.conf.erb --max-pool-size 20 )
 
 #Start daemon to pick up incoming messages
 #Use this script because cron may already have started it
