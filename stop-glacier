@@ -1,9 +1,0 @@
-#!/bin/bash --login
-
-source $HOME/bin/env.sh
-
-#Stop Glacier server
-echo "Stopping Glacier server"
-(cd $GLACIER_HOME ; ./medusa_glacier.sh stop)
-
-exit 0

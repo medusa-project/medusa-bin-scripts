@@ -11,18 +11,6 @@ check filesystem rootfs with path /
   if space usage > 85% for 8 cycles then alert     
   alert medusa-admin@lists.illinois.edu 
 
-check process fixity-server with pidfile {{ fixity_server_home }}/run/medusa_fixity.pid
-  start program = "{{ home }}/bin/start-fixity"
-  stop program = "{{ home }}/bin/stop-fixity"
-
-check process fits-server with pidfile {{ fits_server_home }}/tmp/pids/ruby-fits-server.pid
-  start program = "{{ home }}/bin/start-fits"
-  stop program = "{{ home }}/bin/stop-fits"
-
-check process fits-queue-server with pidfile {{ fits_server_home}}/run/ruby-fits-server-queue.pid
-  start program = "{{ home }}/bin/start-fits-queue"
-  stop program = "{{ home }}/bin/stop-fits-queue"
-
 ##collection registry proper
 check process collection-registry with pidfile {{ medusa_home }}/tmp/pids/passenger.3000.pid
   group rails
@@ -70,6 +58,3 @@ check process delayed-job-short-1 with pidfile {{ medusa_home }}/tmp/pids/delaye
   group delayed_job
   start program = "{{ home }}/bin/delayed_job start short 1"
   stop program = "{{ home }}/bin/delayed_job stop short 1"
-
-check filesystem rclone-mount with path {{ rclone_mountpoint }}
-  start program = "{{ home }}/bin/rclone-mount.sh"

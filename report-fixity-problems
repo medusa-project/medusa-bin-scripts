@@ -1,8 +1,0 @@
-#!/bin/bash --login
-
-source $HOME/bin/env.sh
-
-cd $MEDUSA_HOME 
-bundle exec rake fixity:report_problems
-
-exit 0

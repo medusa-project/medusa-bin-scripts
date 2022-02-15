@@ -1,9 +1,0 @@
-#!/bin/bash --login
-
-source $HOME/bin/env.sh
-
-#Stop local FITS server
-echo "Stopping local FITS server"
-(cd $FITS_SERVER_HOME ; ./stop.sh )
-
-exit 0
