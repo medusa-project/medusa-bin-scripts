@@ -13,7 +13,10 @@ MAILTO=""
 */2 * * * * $HOME/bin/check-message-receiver-daemon
 
 #fetch assessor responses
-*/5 * * * * $HOME/bin/fetch-assessor-responses.sh
+*/5 * * * * $HOME/bin/assessor-fetch-responses.sh
+
+#initiate assessor tasks
+*/7 * * * * $HOME/bin/assessor-fetch-responses.sh
 
 #update the medusa timeline stats
 30 1 * * * $HOME/bin/refresh-timeline-stats
