@@ -2,7 +2,7 @@
 
 source $HOME/bin/env.sh
 
-#Refresh cfs stats from the db
+#Fetch downloader messages
 ( cd $MEDUSA_HOME ; bundle exec rake downloader:fetch_downloader_messages )
 
 exit 0
