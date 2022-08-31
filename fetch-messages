@@ -1,9 +1,11 @@
 #!/bin/bash --login
-# deprecated - included in fetch-messages
 
 source $HOME/bin/env.sh
 
 #Fetch downloader messages
 ( cd $MEDUSA_HOME ; bundle exec rake downloader:fetch_downloader_messages )
+
+#fetch assessor messages
+( cd $MEDUSA_HOME ; bundle exec rake assessor:fetch_messages ; bundle exec rake assessor:handle_fetched_messages )
 
 exit 0

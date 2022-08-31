@@ -1,5 +1,6 @@
 #!/bin/bash --login
 #fetch responses from the Medusa Assessor Service
+# deprecated - included in fetch-messages
 
 source $HOME/bin/env.sh
 
