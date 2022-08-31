@@ -1,0 +1,30 @@
+#!/bin/bash --login
+
+source $HOME/bin/env.sh
+
+#Check if medusa's message receiver daemon is up; if not then restart it
+PASSENGER_FILE=/tmp/passenger.status
+STDERR_FILE=/tmp/message_receiver.err
+
+cd $MEDUSA_DIR
+
+bundle exec passenger status > $PASSENGER_FILE
+PASSENGER_STATUS=$(cat $PASSENGER_FILE)
+if [[ $PASSENGER_STATUS != "Phusion Passenger(R) Standalone is running on PID"* ]]
+then
+    echo "Passenger is not running - will not start message receiver daemon"
+    exit 0
+fi
+
+bundle exec rake daemon:message_receiver:status 2> $STDERR_FILE > /dev/null
+ERR=$(cat $STDERR_FILE)
+
+if [[ $ERR == *"no instances running"* ]]
+then
+    echo "Message receiver not found - restarting"
+    bundle exec rake daemon:message_receiver:start
+fi
+
+rm -f $STDERR_FILE $PASSENGER_FILE
+
+exit 0
