@@ -9,11 +9,8 @@ MAILTO=""
 #restart passenger to try to control memory
 0 4 * * * touch $HOME/medusa/tmp/restart.txt
 
-#check message receiver daemon, restarting if necessary
-*/2 * * * * $HOME/bin/check-message-receiver-daemon
-
-#fetch assessor responses
-*/5 * * * * $HOME/bin/assessor-fetch-responses.sh
+#fetch messages
+*/5 * * * * $HOME/bin/fetch-messages
 
 #initiate assessor tasks
 */7 * * * * $HOME/bin/assessor-initiate-task-batch.sh

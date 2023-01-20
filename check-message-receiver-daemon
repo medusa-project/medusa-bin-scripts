@@ -1,5 +1,6 @@
 #!/bin/bash --login
 
+#deprecated because it stopped working. Replaced with a line in fetch-messages
 source $HOME/bin/env.sh
 
 #Check if medusa's message receiver daemon is up; if not then restart it
@@ -16,7 +17,7 @@ then
     exit 0
 fi
 
-bundle exec rake daemon:message_receiver:status 2> $STDERR_FILE > /dev/null
+bundle exec rails daemon:message_receiver:status 2> $STDERR_FILE > /dev/null
 ERR=$(cat $STDERR_FILE)
 
 if [[ $ERR == *"no instances running"* ]]

@@ -3,9 +3,12 @@
 source $HOME/bin/env.sh
 
 #Fetch downloader messages
-( cd $MEDUSA_HOME ; bundle exec rake downloader:fetch_downloader_messages )
+( cd $MEDUSA_HOME ; bundle exec rails downloader:fetch_downloader_messages )
 
 #fetch assessor messages
-( cd $MEDUSA_HOME ; bundle exec rake assessor:fetch_messages ; bundle exec rake assessor:handle_fetched_messages )
+( cd $MEDUSA_HOME ; bundle exec rails assessor:fetch_messages ; bundle rails rake assessor:handle_fetched_messages )
+
+#fetch client messages
+( cd $MEDUSA_HOME ; bundle exec rails client:fetch_client_messages )
 
 exit 0
