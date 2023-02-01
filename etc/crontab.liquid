@@ -10,7 +10,10 @@ MAILTO=""
 0 4 * * * touch $HOME/medusa/tmp/restart.txt
 
 #fetch messages
-*/5 * * * * $HOME/bin/fetch-messages
+*/15 * * * * $HOME/bin/fetch-messages
+
+#handle messages
+*/15 * * * * $HOME/bin/handle-messages
 
 #initiate assessor tasks
 */7 * * * * $HOME/bin/assessor-initiate-task-batch.sh
