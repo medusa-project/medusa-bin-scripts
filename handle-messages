@@ -3,6 +3,6 @@
 source $HOME/bin/env.sh
 
 #fetch assessor messages
-( cd $MEDUSA_HOME ; bundle rails rails assessor:handle_fetched_messages )
+( cd $MEDUSA_HOME ; bundle exec rails assessor:handle_fetched_messages )
 
 exit 0
