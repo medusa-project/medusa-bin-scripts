@@ -1,0 +1,8 @@
+#!/bin/bash --login
+
+source $HOME/bin/env.sh
+
+#Process globus transfers
+( cd $MEDUSA_HOME ; bundle exec rails globus:process_transfers )
+
+exit 0
