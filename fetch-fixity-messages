@@ -1,0 +1,8 @@
+#!/bin/bash --login
+
+source $HOME/bin/env.sh
+
+#Fetch fixity messages
+( cd $MEDUSA_HOME ; bundle exec rails fixity:handle_fixity_responses )
+
+exit 0
